@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FormFieldEditorComponent implements OnInit {
 
   field_data = {
-    name: 'Default value'
+    name: 'Default value',
+    active: true,
+    enabled: true
   }
 
   constructor() { }
