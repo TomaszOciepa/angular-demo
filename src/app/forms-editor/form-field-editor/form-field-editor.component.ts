@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'form-field-editor',
@@ -7,16 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormFieldEditorComponent implements OnInit {
 
+  @Input('data')
   field_data = {
-    name: 'Default value',
-    active: true,
-    enabled: true,
-    hints: '',
-    type: {type: 'text', label:'Text Field'}
+
   }
+
+  @Output()
+  dataChange = new EventEmitter()
 
   compareType(type1, type2){
     return type2 && type1.type == type2.type
+  }
+
+  save(formRef){
+    this.dataChange.emit(this.field_data)
   }
 
   fieldTypes = [

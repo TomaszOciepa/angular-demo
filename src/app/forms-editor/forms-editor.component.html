@@ -2,7 +2,7 @@
 <h3>Form editor</h3>
 <div class="row">
     <div class="col-3">
-        <form-field-editor></form-field-editor>
+        <form-field-editor [data]="fieldData" (dataChange)="formSaved($event)"></form-field-editor>
     </div>
 </div>
 

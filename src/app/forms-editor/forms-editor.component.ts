@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsEditorComponent implements OnInit {
 
+  fieldData = {
+    name: 'Default value',
+    active: true,
+    enabled: true,
+    hints: '',
+    type: {type: 'text', label:'Text Field'}
+  }
+
+  formSaved(data){
+    console.log('saved', data)
+  }
+
   constructor() { }
 
   ngOnInit() {
