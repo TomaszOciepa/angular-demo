@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -16,12 +17,26 @@ export class FormFieldEditorComponent implements OnInit {
   @Output()
   dataChange = new EventEmitter()
 
+  @ViewChild(NgForm)
+  form: NgForm
+
+  ngOnInit() {
+    setTimeout(()=>{
+      this.form.setValue(this.field_data)
+    }, 0)
+  }
+
+  cancel(){
+    this.form.setValue(this.field_data)
+    // this.form.reset()
+  }
+
   compareType(type1, type2){
     return type2 && type1.type == type2.type
   }
 
-  save(formRef){
-    this.dataChange.emit(this.field_data)
+  save(){
+    this.dataChange.emit(this.form.value)
   }
 
   fieldTypes = [
@@ -32,7 +47,6 @@ export class FormFieldEditorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 }

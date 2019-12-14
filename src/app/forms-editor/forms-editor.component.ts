@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'forms-editor',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forms-editor.component.css']
 })
 export class FormsEditorComponent implements OnInit {
-
+  
+  
   fieldData = {
     name: 'Default value',
     active: true,
@@ -16,6 +17,7 @@ export class FormsEditorComponent implements OnInit {
   }
 
   formSaved(data){
+    this.fieldData = data
     console.log('saved', data)
   }
 
