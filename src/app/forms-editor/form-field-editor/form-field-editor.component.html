@@ -35,10 +35,17 @@
             </select>
     </div>
 
-    <div class="form-group" ngModelGroup="extra">
+    <input type="checkbox" ngModel name="has_extra">
+
+    <ng-container ngModelGroup="extra" *ngIf="form.value.has_extra">
+    <div class="form-group" *ngFor="let options of extra_fields">
         <label>Extra</label>
-        <input type="text" class="form-control" ngModel name="option">
-    </div>    
+        <input type="text" class="form-control" ngModel [name]="options">
+    </div>
+    <input #key>    
+    <button (click)="addExtra(key.value)">add</button>
+</ng-container>
+
 
     <div class="form-group">
         <button class="btn btn-success">Save</button>

@@ -9,6 +9,11 @@ import { NgForm } from '@angular/forms';
 })
 export class FormFieldEditorComponent implements OnInit {
 
+  extra_fields = []
+
+  addExtra(key){
+    this.extra_fields.push(key)
+  }
 
   extraChanged(extra){
     console.log(extra)
