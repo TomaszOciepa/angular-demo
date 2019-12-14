@@ -1,6 +1,20 @@
-<p>form-creator works!</p>
 
-<div class="form-group">
 
-    <input type="text" class="form-control" [formControl]="formTitle">
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <input type="text" class="form-control" [formControl]="formTitle">
+        </div>
+        
+        <label>Label:</label>
+        <div class="form-group" [formGroup]="fieldOptions">
+            <input type="text" class="form-control" formControlName="label">
+        </div>
+    </div>
+    <div class="col">
+        <pre>
+            {{ fieldOptions.value | json}}
+        </pre>
+    </div>
 </div>
+

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'form-creator',
@@ -9,10 +9,18 @@ import { FormControl } from '@angular/forms';
 export class FormCreatorComponent implements OnInit {
 
   formTitle: FormControl
+  fieldOptions: FormGroup
 
   constructor() {
     this.formTitle = new FormControl('batman')
-    console.log(this.formTitle)
+
+    this.fieldOptions = new FormGroup({
+        type: new FormControl('text'),
+        label: new FormControl('')
+    })
+    
+
+    console.log(this.fieldOptions)
    }
 
   ngOnInit() {
