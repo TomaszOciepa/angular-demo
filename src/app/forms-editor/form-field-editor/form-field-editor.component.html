@@ -35,22 +35,10 @@
             </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ngModelGroup="extra">
         <label>Extra</label>
-        <input type="text" class="form-control"
-         ngModel (ngModelChange)="extraChanged($event)" 
-         [ngModelOptions]="{ updateOn:'blur', name:'extra_field' }"
-         name="extra">
-    </div>
-
-    <div class="form-group">
-        <label>Extra 2</label>
-        <input type="text" class="form-control"
-         ngModel (ngModelChange)="extraChanged($event)" 
-         [ngModelOptions]="{ updateOn:'blur', standalone: true }"
-         name="extra">
-    </div>
-    
+        <input type="text" class="form-control" ngModel name="option">
+    </div>    
 
     <div class="form-group">
         <button class="btn btn-success">Save</button>
