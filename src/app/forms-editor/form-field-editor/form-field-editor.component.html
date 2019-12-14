@@ -36,7 +36,28 @@
     </div>
 
     <div class="form-group">
+        <label>Extra</label>
+        <input type="text" class="form-control"
+         ngModel (ngModelChange)="extraChanged($event)" 
+         [ngModelOptions]="{ updateOn:'blur', name:'extra_field' }"
+         name="extra">
+    </div>
+
+    <div class="form-group">
+        <label>Extra 2</label>
+        <input type="text" class="form-control"
+         ngModel (ngModelChange)="extraChanged($event)" 
+         [ngModelOptions]="{ updateOn:'blur', standalone: true }"
+         name="extra">
+    </div>
+    
+
+    <div class="form-group">
         <button class="btn btn-success">Save</button>
         <button class="btn btn-danger" type="button" (click)="cancel()">Cancel</button>
     </div>
+
+    <pre>
+        Model: {{ form.value | json }}
+    </pre>
 </form>

@@ -12,7 +12,7 @@ export class FormsEditorComponent implements OnInit {
     name: 'Default value',
     active: true,
     enabled: true,
-    hints: '',
+    hints: 'Test hints',
     type: {type: 'text', label:'Text Field'}
   }
 
