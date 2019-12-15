@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsEditorModule } from './forms-editor/forms-editor.module';
+import { ValidationModule } from './validation/validation.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsEditorModule } from './forms-editor/forms-editor.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsEditorModule
+    FormsEditorModule,
+    ValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

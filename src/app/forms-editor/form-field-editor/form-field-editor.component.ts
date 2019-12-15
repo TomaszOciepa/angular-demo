@@ -27,7 +27,7 @@ export class FormFieldEditorComponent implements OnInit {
   @Output()
   dataChange = new EventEmitter()
 
-  @ViewChild(NgForm)
+  // @ViewChild(NgForm)
   form: NgForm
 
   ngOnInit() {
