@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
     ]),
     password: this.form.control('', [
       Validators.required,
-      Validators.pattern('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$'),
+      Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'),
     ]),
     repeat_password: this.form.control(''),
   })
